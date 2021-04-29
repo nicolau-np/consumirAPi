@@ -7,8 +7,17 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home"),
       ),
-      body: Center(
-        child: Text('hello world'),
+      body: Column(
+        children: [
+          Text("hello World"),
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("/contacts");
+            },
+            child: Text('Contactos'),
+            color: Colors.blue,
+          )
+        ],
       ),
     );
   }
