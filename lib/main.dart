@@ -1,3 +1,4 @@
+import 'package:consumirapi/screens/contacts.dart';
 import 'package:consumirapi/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) => HomePage(),
+        '/contacts': (context)=> ContactosPage()
       },
     );
   }
