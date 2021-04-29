@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:consumirapi/screens/contacts.dart';
 import 'package:consumirapi/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
 
 void main() {
   runApp(MyApp());
