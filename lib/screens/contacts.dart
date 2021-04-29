@@ -1,3 +1,4 @@
+import 'package:consumirapi/widgets/lista_contactos.dart';
 import 'package:flutter/material.dart';
 
 class ContactosPage extends StatelessWidget {
@@ -7,13 +8,9 @@ class ContactosPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Contactos"),
       ),
-      body: Column(
-        children: [
-          Center(
-            child: Text('hello world'),
-          ),
-        ],
-      ),
+      body: ListaContactos(),
+        
+      
     );
   }
 }

@@ -17,12 +17,12 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => ContactoManager())],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'consumerAPI',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        initialRoute: '/posts',
+        initialRoute: '/contacts',
         routes: {
           '/home': (context) => HomePage(),
           '/contacts': (context) => ContactosPage(),
