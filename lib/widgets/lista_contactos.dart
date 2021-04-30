@@ -22,16 +22,21 @@ class _ListaContactosState extends State<ListaContactos> {
     }
 
     return Container(
-      child: FutureBuilder(
+      child: FutureBuilder<ContactoModel>(
         future: _contactoMOdel,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.builder(itemBuilder: (context, index) {
-              return Container(
-                height: 100,
-                color: Colors.red,
-              );
-            });
+            return ListView.builder(
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 100,
+                    child: Row(
+                      children: [
+                        Text('heloo'),
+                      ],
+                    ),
+                  );
+                });
           } else {
             return Center(
               child: CircularProgressIndicator(),
