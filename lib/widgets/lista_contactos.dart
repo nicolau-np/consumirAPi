@@ -32,8 +32,10 @@ class _ListaContactosState extends State<ListaContactos> {
                 color: Colors.red,
               );
             });
-          }else{
-            return CircularProgressIndicator();
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           }
         },
       ),
