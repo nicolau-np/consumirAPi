@@ -6,26 +6,26 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
-
 class ListaContactos extends StatefulWidget {
-
   @override
   _ListaContactosState createState() => _ListaContactosState();
 }
 
 class _ListaContactosState extends State<ListaContactos> {
- 
   @override
   Widget build(BuildContext context) {
-
     @override
-    void initState(){
+    void initState() {
       super.initState();
-      
     }
 
-    return Center(
-       child: Text("hello"),
-      );
+    return Container(
+      child: ListView.builder(itemBuilder: (context, index) {
+        return Container(
+          height: 100,
+          color: Colors.red,
+        );
+      }),
+    );
   }
 }
