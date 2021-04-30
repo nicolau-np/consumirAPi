@@ -1,28 +1,17 @@
 import 'package:flutter/foundation.dart';
 class ContactoModel{
-int id;
-  String nome;
-  String genero;
 
-  ContactoModel({this.id, this.nome, this.genero});
+  final int id;
+  final String nome;
+  final String genero;
 
-  ContactoModel.fromJson(Map<String, dynamic> json) {
-    id = json["data"]['id'];
-    nome = json["data"]['nome'];
-    genero = json["data"]['genero'];
+  ContactoModel({@required this.id, @required this.nome, @required this.genero});
+
+  factory ContactoModel.fromJson(Map<String, dynamic> json) {
+    return ContactoModel(
+      id: json['id'],
+      nome: json['nome'],
+      genero: json['genero'],
+    );
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['nome'] = this.nome;
-    data['genero'] = this.genero;
-    return data;
-  }
-
-  @override
-  String toString() {
-    return "Account(id: $id, nome: $nome, genero: $genero)";
-  }
-
 }

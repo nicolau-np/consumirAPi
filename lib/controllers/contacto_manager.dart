@@ -7,40 +7,18 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 
 class ContactoManager extends ChangeNotifier {
-  ContactoModel contactoModel = ContactoModel();
-  ContactoManager() {
-    getContactos();
+  Future<ContactoModel> fetchContacto() async {
+  final response =
+      await http.get(Uri.https('http://127.0.0.1/api', 'contactos'));
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return ContactoModel.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
   }
-
-  bool _isLoading = false;
-
-  bool get loading => _isLoading;
-  set loading(bool value) {
-    _isLoading = value;
-    notifyListeners();
-  }
-
-  Future<ApiResponse<ContactoModel>> getContactos() async {
-    try {
-      var url = '$BASE_URL/contactos/';
-
-      var response = await http.get(url);
-
-      Map mapRensponse = json.decode(response.body);
-
-      if (response.statusCode == 200) {
-        contactoModel = ContactoModel.fromJson(mapRensponse);
-
-        notifyListeners();
-        return ApiResponse.ok(contactoModel);
-      }
-      notifyListeners();
-      return ApiResponse.error(mapRensponse["message"]);
-    } catch (e) {
-      print(
-        "Erro no login $e",
-      );
-      return ApiResponse.error("Impossivel fazer login");
-    }
-  }
+}
 }
