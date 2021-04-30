@@ -2,10 +2,10 @@ import 'package:consumirapi/constants/strings.dart';
 import 'package:http/http.dart' as http;
 
 class Api_Manager{
-  void getContactos(){
+  void getContactos() async{
     var client = http.Client();
 
-    client.get(Strings.contacto_url);
+    var response = await client.get(Strings.contacto_url);
 
 
   }
