@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-
 import 'package:consumirapi/models/contacto_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
