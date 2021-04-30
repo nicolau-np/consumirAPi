@@ -6,7 +6,9 @@ class Api_Manager{
     var client = http.Client();
 
     var response = await client.get(Strings.contacto_url);
-
+    if(response.statusCode == 200){
+      var jsonString = response.body;
+    }
 
   }
 }
