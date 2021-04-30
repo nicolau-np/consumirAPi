@@ -14,21 +14,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => ContactoManager())],
-      child: MaterialApp(
-        title: 'consumerAPI',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        initialRoute: '/contacts',
-        routes: {
-          '/home': (context) => HomePage(),
-          '/contacts': (context) => ContactosPage(),
-          '/posts': (context) => PostsPage(),
-        },
+    return MaterialApp(
+      title: 'consumerAPI',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      initialRoute: '/contacts',
+      routes: {
+        '/home': (context) => HomePage(),
+        '/contacts': (context) => ContactosPage(),
+        '/posts': (context) => PostsPage(),
+      },
     );
   }
 }
